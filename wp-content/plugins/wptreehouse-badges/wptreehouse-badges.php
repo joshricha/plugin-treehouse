@@ -14,6 +14,15 @@
 
 /*
  *
+ * Assign global variables
+ *
+*/
+
+$plugin_url = WP_PLUGIN_URL . '/wptreehouse-badges';
+
+
+/*
+ *
  * Add a link to our plugin in the admin area
  * under 'Settings > Treehouse Badges'
  *
@@ -49,6 +58,8 @@ function wptreehouse_badges_options_page() {
 		wp_die( 'You do not have sufficient permissions to access this page' );
 
 	}
+
+	global $plugin_url;
 
 	require( 'inc/options-page-wrapper.php' );
 
