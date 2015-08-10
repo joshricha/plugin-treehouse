@@ -68,12 +68,12 @@ function wptreehouse_badges_options_page() {
 }
 
 
+function wptreehouse_basged_styles() {
 
+	wp_enqueue_style( 'wptreehouse_badges_stles', plugins_url( 'wptreehouse-badges/wptreehouse-badges.css' ) );
 
-
-
-
-
+}
+add_action( 'admin_head', 'wptreehouse_badges_stles' );
 
 
 
