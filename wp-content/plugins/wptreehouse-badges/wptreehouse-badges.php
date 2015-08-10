@@ -50,7 +50,7 @@ function wptreehouse_badges_options_page() {
 
 	}
 
-	echo '<p>Welcome to our plugin page</p>';
+	require( 'inc/options-page-wrapper.php' );
 
 
 
