@@ -14,6 +14,8 @@
 
 				<div class="meta-box-sortables ui-sortable">
 
+					<?php if ( !isset( $wptreehouse_username ) || $wptreehouse_username == '' ): ?>
+
 					<div class="postbox">
 
 						<div class="handlediv" title="Click to toggle"><br></div>
@@ -51,6 +53,8 @@
 
 					</div>
 					<!-- .postbox -->
+
+					<?php else: ?>
 
 					<div class="postbox">
 
@@ -90,6 +94,7 @@
 
 					</div>
 					<!-- .postbox -->
+					<?php endif; ?>
 
 				</div>
 				<!-- .meta-box-sortables .ui-sortable -->
@@ -101,6 +106,8 @@
 			<div id="postbox-container-1" class="postbox-container">
 
 				<div class="meta-box-sortables">
+
+					<?php if ( isset( $wptreehouse_username ) || $wptreehouse_username != '' ): ?>
 
 					<div class="postbox">
 
@@ -120,6 +127,8 @@
 
 					</div>
 					<!-- .postbox -->
+
+				<?php endif; ?>
 
 				</div>
 				<!-- .meta-box-sortables -->

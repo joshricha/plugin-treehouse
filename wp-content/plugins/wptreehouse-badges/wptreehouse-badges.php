@@ -69,7 +69,8 @@ function wptreehouse_badges_options_page() {
 
 			$wptreehouse_username = esc_html( $_POST['wptreehouse_username'] );
 
-			echo $wptreehouse_username;
+			
+			
 		}
 	}
 
