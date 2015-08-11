@@ -24,7 +24,9 @@
 
 						<div class="inside">
 
-							<form action="" method="post">
+							<form action="" name="wptreehouse_username_form" method="post">
+
+								<input type="hidden" name="wptreehouse_form_submitted" value="Y">
 
 								<table class="form-table">
 									<tr>

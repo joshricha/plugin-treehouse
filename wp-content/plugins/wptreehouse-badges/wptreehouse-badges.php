@@ -61,19 +61,30 @@ function wptreehouse_badges_options_page() {
 
 	global $plugin_url;
 
-	require( 'inc/options-page-wrapper.php' );
+	if( isset( $_POST['wptreehouse_form_submitted'] ) ) {
+		
+		$hidden_field = esc_html( $_POST['wptreehouse_form_submitted'] );
 
+		if( $hidden_field == 'Y' ) {
+
+			$wptreehouse_username = esc_html( $_POST['wptreehouse_username'] );
+
+			echo $wptreehouse_username;
+		}
+	}
+
+	require( 'inc/options-page-wrapper.php' );
 
 
 }
 
 
-function wptreehouse_basged_styles() {
+function wptreehouse_badges_styles() {
 
 	wp_enqueue_style( 'wptreehouse_badges_stles', plugins_url( 'wptreehouse-badges/wptreehouse-badges.css' ) );
 
 }
-add_action( 'admin_head', 'wptreehouse_badges_stles' );
+add_action( 'admin_head', 'wptreehouse_badges_styles' );
 
 
 
