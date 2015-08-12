@@ -94,6 +94,65 @@ function wptreehouse_badges_options_page() {
 }
 
 
+class Wptreehouse_Badges_Widget extends WP_Widget {
+
+	function wptreehouse_badges_widget() {
+		// Instantiate the parent object
+		parent::__construct( false, 'Official Treehouse Badges Widget' );
+	}
+
+	function widget( $args, $instance ) {
+		// Widget output
+
+		extract( $args );
+		$title = apply_filters( 'widget_title', $instance['title'] );
+
+		$options = get_options( 'wptreehouse_badges' );
+		$wpthreehouse_profile = $options['wpthreehouse_profile'];
+
+		require( 'inc/front-end.php' )
+	}
+
+	function update( $new_instance, $old_instance ) {
+		// Save widget options
+
+		$instance = $old_instance;
+		$instance['title'] = strip_tags($new_instance['title']);
+
+		return $instance;
+	}
+
+	function form( $instance ) {
+		// Output admin widget options form
+
+		$title = esc_attr( $instance['title'] );
+
+		require( 'inc/widget-fields.php' );
+
+	}
+}
+
+function wptreehouse_badges_register_widgets() {
+
+	register_widget( 'Wptreehouse_Badges_Widget extends WP_Widget {
+' );
+
+}
+
+
+function wptreehouse_badges_get_profile( $
+ ){
+
+	$json_feed_url = 'http://teamtreehouse.com/' . $wptreehouse_username . '.json';
+
+
+	return json_feed_url;
+
+}
+
+add_action( 'widgets_init', 'myplugin_register_widgets' );
+
+
 function wptreehouse_badges_styles() {
 
 	wp_enqueue_style( 'wptreehouse_badges_stles', plugins_url( 'wptreehouse-badges/wptreehouse-badges.css' ) );
